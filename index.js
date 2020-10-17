@@ -16,7 +16,7 @@ const app= express()
 app.use(bodyParser.json());
 app.use(cors());
 
-
+const port = 5000;
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
@@ -73,8 +73,8 @@ app.get('/tasks', (req,res)=>{
 
 
 
-app.get('/',(req,res)=>{
-    res.send('db connected')
-})
+// app.get('/',(req,res)=>{
+//     res.send('db connected')
+// })
 
-app.listen(5000);
+app.listen(process.env.PORT || port );
