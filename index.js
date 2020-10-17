@@ -73,8 +73,8 @@ app.get('/tasks', (req,res)=>{
 
 
 
-// app.get('/',(req,res)=>{
-//     res.send('db connected')
-// })
+app.get('/',(req,res)=>{
+    res.send('db connected')
+})
 
 app.listen(process.env.PORT || port );
